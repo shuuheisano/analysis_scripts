@@ -9,6 +9,7 @@ The pipeline includes quality control, read preprocessing, read alignment, gene 
 ## Requirements
 
 - FastQC v0.12.1
+- MultiQC v1.23
 - fastp v0.23.4
 - HISAT2 v2.2.1
 - samtools v1.21
@@ -26,7 +27,7 @@ The pipeline includes quality control, read preprocessing, read alignment, gene 
 
 Run the scripts in the following order:
 
-1. `01_fastqc.sh`
+1. `01_fastqc_multiqc.sh`
 2. `02_fastp.sh`
 3. `03_hisat2.sh`
 4. `04_stringtie.sh`
