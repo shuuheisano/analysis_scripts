@@ -1,38 +1,37 @@
-# RNA-seq analysis pipeline
+# Analysis scripts
 
-## Overview
+This repository contains the analysis scripts used in the following study:
 
-This repository contains the scripts used for the RNA-seq analyses described in [ ].
+"Helios-Dependent Chromatin Remodeling Drives IFN-α–Responsive
+Plasmablast Differentiation in NMOSD Naïve B Cells"
 
-The pipeline includes quality control, read preprocessing, read alignment, gene quantification, differential expression analysis, principal component analysis (PCA), and weighted gene co-expression network analysis (WGCNA).
+## Repository structure
 
-## Requirements
+### RNAseq
 
-- FastQC v0.12.1
-- MultiQC v1.23
-- fastp v0.23.4
-- HISAT2 v2.2.1
-- samtools v1.21
-- StringTie v2.2.3
-- DESeq2 v1.44.0
-- WGCNA v1.73
+The RNA-seq analysis pipeline includes:
 
-## Input
+1. Quality control (FastQC, MultiQC)
+2. Read trimming (fastp)
+3. Read alignment (HISAT2)
+4. Gene quantification (StringTie and prepDE.py3)
+5. Differential expression analysis (DESeq2)
+6. Principal component analysis (PCA)
+7. Gene Ontology (GO) enrichment analysis (Metascape)
+8. Gene set enrichment analysis (fgsea)
+9. Weighted gene co-expression network analysis (WGCNA)
 
-- Raw FASTQ files (50-bp single-end)
-- UCSC hg38 reference genome
-- Gene annotation (GTF)
+### ATACseq
 
-## Usage
+The ATAC-seq analysis pipeline includes:
 
-Run the scripts in the following order:
+1. Quality control (FastQC)
+2. Adapter trimming (Trimmomatic)
+3. Read alignment (BWA-MEM)
+4. Peak calling (MACS2)
+5. Differential accessibility analysis (DiffBind)
+6. Peak annotation (ChIPseeker)
+7. Motif analysis (chromVAR)
+8. BigWig generation and IGV visualization
 
-1. `01_fastqc_multiqc.sh`
-2. `02_fastp.sh`
-3. `03_hisat2.sh`
-4. `04_stringtie.sh`
-5. `05_merge_counts.R`
-6. `06_deseq2.R`
-7. `07_pca.R`
-8. `08_wgcna.R`
 
